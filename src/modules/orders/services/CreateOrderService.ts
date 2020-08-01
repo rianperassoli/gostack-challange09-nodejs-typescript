@@ -41,11 +41,7 @@ class CreateOrderService {
       throw new AppError('customer does not exist');
     }
 
-    const idsOrdered = products.map(product => ({ id: product.id }));
-
-    const productsOrdered = await this.productsRepository.findAllById(
-      idsOrdered,
-    );
+    const productsOrdered = await this.productsRepository.findAllById(products);
 
     const productsToOrder: IProductOrder[] = [];
     const newQuantities: IProduct[] = [];
