@@ -24,10 +24,10 @@ class OrdersProducts {
   @JoinColumn({ name: 'product_id' })
   product: Product;
 
-  @Column('uuid')
+  @Column()
   product_id: string;
 
-  @Column('uuid')
+  @Column()
   order_id: string;
 
   @Column({ type: 'decimal', precision: 18, scale: 2 })
